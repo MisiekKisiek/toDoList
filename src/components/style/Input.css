@@ -1,0 +1,228 @@
+* {
+  box-sizing: border-box;
+}
+/* FORM ALL */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+  font-family: "Bellota", cursive;
+  font-weight: 700;
+}
+
+/* ISSUE AND PRIORITY */
+form .issue {
+  line-height: 30px;
+  width: 400px;
+  margin: 0 20px;
+  font-size: 20px;
+  border: 2px solid #69ee;
+  border-radius: 5px;
+}
+
+form label {
+  margin: 15px 0;
+}
+
+form label + label {
+  margin: 0 0 0px 0;
+}
+
+form .checkboxLabel {
+  position: relative;
+  top: 2px;
+  width: 40px;
+  height: 40px;
+}
+form .checkboxLabel + span {
+  position: relative;
+  top: 2px;
+  margin-left: 25px;
+  font-size: 18px;
+}
+
+@media (max-width: 640px) {
+  form .issue {
+    width: 300px;
+  }
+  form .checkboxLabel {
+    top: 0;
+  }
+  form .checkboxLabel + span {
+    top: 0;
+  }
+}
+
+form .priority {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 999;
+}
+
+form .checkboxCustom {
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  height: 21px;
+  width: 21px;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 2px solid #69ee;
+}
+
+form .checkboxCustom:after {
+  position: absolute;
+  content: "";
+  left: 6.5px;
+  top: 6.5px;
+  width: 0;
+  height: 0;
+  border-radius: 5px;
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(0deg) scale(0);
+  -ms-transform: rotate(0deg) scale(0);
+  transform: rotate(0deg) scale(0);
+  opacity: 1;
+}
+
+form .priority:checked ~ .checkboxCustom {
+  background-color: #69ee;
+  border-radius: 5px;
+  -webkit-transform: rotate(0deg) scale(1);
+  -ms-transform: rotate(0deg) scale(1);
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+  border: 2px solid #69ee;
+}
+
+form .priority:checked ~ .checkboxCustom:after {
+  -webkit-transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  transform: rotate(45deg) scale(1);
+  opacity: 1;
+  left: 5px;
+  top: 0px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  background-color: transparent;
+  border-radius: 0;
+}
+
+form .checkboxCustom::before {
+  position: absolute;
+  content: "";
+  left: 6.5px;
+  top: 6.5px;
+  width: 0px;
+  height: 0px;
+  border-radius: 5px;
+  border: 2px solid #69ee;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+}
+
+form .priority:checked ~ .checkboxCustom::before {
+  left: -4px;
+  top: -4px;
+  width: 21px;
+  height: 21px;
+  border-radius: 5px;
+  -webkit-transform: scale(1.8);
+  -ms-transform: scale(1.8);
+  transform: scale(1.8);
+  opacity: 0;
+  z-index: 999;
+  transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+}
+
+/* MEDIA FOR ALL FORM MARGINS AND DISPLAY */
+
+@media (max-width: 1024px) {
+  form label {
+    margin: 10px 0;
+  }
+
+  form label + label {
+    margin: 10px 0;
+  }
+}
+@media (min-width: 1024px) {
+  form {
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px 0;
+  }
+}
+
+/* DATE */
+
+form .dateLabel {
+  font-size: 18px;
+}
+
+form .dateLabel input {
+  line-height: 30px;
+  /* width: 400px; */
+  margin: 0px 0px;
+  font-size: 16px;
+  border: 2px solid #69ee;
+  border-radius: 5px;
+}
+/* BUTTON */
+form button {
+  position: relative;
+  display: block;
+  height: 40px;
+  width: 150px;
+  margin: auto;
+  background-color: transparent;
+  outline: 0;
+  border: #58dd 2px solid;
+  border-radius: 20px;
+  color: #58dd;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  transition: 0.2s;
+  overflow: hidden;
+}
+
+form button:active::after {
+  background-color: #47cc;
+}
+
+form button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 40px;
+  background-color: #69ee;
+  transition: 0.2s;
+}
+
+form button:hover::after {
+  width: 100%;
+}
+
+form button:hover {
+  color: white;
+}
+
+form button p {
+  position: relative;
+  z-index: 1;
+}

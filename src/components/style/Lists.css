@@ -1,0 +1,91 @@
+.lists {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  font-family: "Bellota", cursive;
+}
+
+.lists ul {
+  flex-grow: 1;
+  min-height: 100px;
+  text-align: center;
+  list-style-type: none;
+  font-weight: 700;
+}
+
+@media (min-width: 640px) {
+  .lists {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+  .lists ul {
+    max-width: 50%;
+    padding: 0 20px;
+  }
+}
+
+.lists ul h2 {
+  color: #69ee;
+  font-size: 30px;
+  text-decoration: underline;
+}
+
+.lists ul h2 ~ li {
+  border-bottom: 1px solid #aaa;
+}
+
+.lists ul li {
+  max-width: 100%;
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+}
+
+.lists ul li span {
+  display: block;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  text-align: justify;
+  font-size: 20px;
+}
+
+.lists ul li div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.lists ul li div span {
+  max-width: 100%;
+  margin: 0 10px;
+}
+.lists ul li button {
+  /* display: block; */
+  height: 40px;
+  width: 100px;
+  margin: 0 10px;
+  background-color: transparent;
+  outline: 0;
+  border: #58dd 2px solid;
+  border-radius: 20px;
+  color: #58dd;
+  font-family: Arial, Helvetica, sans-serif;
+  /* font-size: 20px; */
+  overflow: hidden;
+}
+
+.lists ul li button + button {
+  width: 40px;
+}
+.lists ul li.priority div {
+  color: rgb(235, 118, 118);
+}
+
+.lists ul li.priority button {
+  border: 2px solid rgb(235, 118, 118);
+  color: rgb(235, 118, 118);
+}
